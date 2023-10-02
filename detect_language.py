@@ -1,11 +1,16 @@
 #import dependencies
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import json
 import torch
+
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from languages import Language
 from languages_ISO import language_codes
 
-model = AutoModelForSequenceClassification.from_pretrained('Language_Detection_Model/Bert_Detect_Language_Model')
-tokenizer = AutoTokenizer.from_pretrained('Language_Detection_Model/Bert_Detect_Language_Tokenizer')
+with open('config_model.json', 'r') as f:
+        config_model = json.load(f)
+
+model = AutoModelForSequenceClassification.from_pretrained(config_model.get("model_path"))
+tokenizer = AutoTokenizer.from_pretrained(config_model.get("tokenizer_path"))
 
 async def detect_language(input_string):
 

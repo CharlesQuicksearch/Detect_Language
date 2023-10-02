@@ -1,0 +1,4 @@
+{
+  "model_path": "Language_Detection_Model/Bert_Detect_Language_Model",
+  "tokenizer_path": "Language_Detection_Model/Bert_Detect_Language_Tokenizer"
+}

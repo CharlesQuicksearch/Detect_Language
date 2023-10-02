@@ -1,18 +1,18 @@
 import json
-
-from fastapi import FastAPI, HTTPException
-from request_and_response import Request, Response
-from detect_language import detect_language
-from Config_Logger import logger
-from Config_Logger.logger import logging
 import schedule
 import uvicorn
 
+from detect_language import detect_language
+from Config_Logger import logger
+from Config_Logger.logger import logging
+from fastapi import FastAPI, HTTPException
+from request_and_response import Request, Response
+
 app = FastAPI()
 
-logging.info("Application running")
-
 logger.config_logger()
+
+logging.info("Application running")
 
 #Start writing logs in a new logging file
 schedule.every().day.at("00:00").do(logger.config_logger)
