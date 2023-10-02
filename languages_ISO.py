@@ -9,7 +9,7 @@ language_codes = np.array(
          ("Chinese", "zh-CN", "zh"),
          ("Chinese", "zh-Hant", "zh"),
          ("Czech", "cs-CZ", "cz"),
-         ("Dutch ", "nl-BE","nl"), #nl added not in list
+         ("Dutch", "nl-BE", "nl"), #nl added not in list
          ("Estonian", "et-EE", "et"),
          ("French", "fr-FR", "fr"),
          ("German", "de-AT", "de"),
